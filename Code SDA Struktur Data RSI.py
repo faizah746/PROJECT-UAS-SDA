@@ -112,7 +112,7 @@ class TreeGUI(tk.Tk):
         self.search_var.set("")
         self.populate_tree()
     
-    def find_matching_paths(node, query, path=None):
+    def dfs_search(node, query, path=None):
         if path is None:
             path = []
         results = []
@@ -122,7 +122,7 @@ class TreeGUI(tk.Tk):
             results.append(current_path)
     
         for child in node.children:
-            results.extend(TreeGUI.find_matching_paths(child, query, current_path)) 
+            results.extend(TreeGUI.dfs_search(child, query, current_path)) 
         
         return results
     
