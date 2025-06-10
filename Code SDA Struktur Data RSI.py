@@ -22,9 +22,9 @@ class TreeGUI(tk.Tk):
 
         self.search_var = tk.StringVar()
         tk.Entry(self.search_frame, textvariable=self.search_var, width=40).pack(side=tk.LEFT, padx=(0, 5))
-        tk.Button(self.search_frame, text="Cari", command=self.perform_search).pack(side=tk.LEFT)
+        tk.Button(self.search_frame, text="Cari", command=self.perform_search).pack(side=tk.LEFT, padx=(0, 10))
         tk.Button(self.search_frame, text="Reset", command=self.reset_tree).pack(side=tk.LEFT)
-
+        
         self.tree = ttk.Treeview(self)
         self.tree.pack(fill=tk.BOTH, expand=True)
 
